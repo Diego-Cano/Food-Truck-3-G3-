@@ -46,7 +46,7 @@ if(!empty($_POST['customer_name']) &&
 
     $total =  '<div class="total">
                 <h2>Thank you, ' . $customerName . '!</h2>
-    <p class="italicize">Contact Info:' . $email . '<br>' . $phone . '</p>
+    <p class="italicize">Contact Info: ' . $email . '<br>' . $phone . '</p>
         <dl>
             <dt></dt>
                 <dd></dd>

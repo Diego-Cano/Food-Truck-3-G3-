@@ -1,6 +1,6 @@
 <?php
 include('includes/customer.php');
-include('includes/order.php');
+include('includes/total.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,7 +45,7 @@ include('includes/order.php');
               <!-- this div will only display when all required form fields
               are filled out and order is complete-->
 <div class="center"> 
-       <?php echo $total?>
+       <?php echo 'Total is: '.$total->getSubtotal($myCurries);?>
 </div>     
 
 
