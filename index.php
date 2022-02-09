@@ -85,7 +85,7 @@ if(!empty($_POST['customer_name']) &&
 
 <div class="hero">
     <div class="hero-text">
-        <h1 class="headline">Kyrah's Curry Cart</h1>
+        <h1 class="headline">Kyrrah's Curry Cart</h1>
     </div>   
 </div><!--HERO-->
 
@@ -99,7 +99,7 @@ if(!empty($_POST['customer_name']) &&
       <div class="flex-container right">
       <div class="container about">
       <h2 class="red-text center">About Us<h2>
-          <p class="italicize">Kyrah's Curry Cart is Seattle's oldest, continuously operated food truck! Serving up spice n' sass&trade; since 1993,
+          <p class="italicize">Kyrrah's Curry Cart is Seattle's oldest, continuously operated food truck! Serving up spice n' sass&trade; since 1993,
               we've continued to be your neighborhood go-to for all things curry. 
           </p>
               </div><!--end about-->
