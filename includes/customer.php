@@ -1,4 +1,5 @@
 <?php
+//customer.php 
 
 // initialize variables
 $customerName = '';
