@@ -1,5 +1,6 @@
 <?php
 include('includes/customer.php');
+include('includes/order.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,7 +14,7 @@ include('includes/customer.php');
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Libre+Baskerville&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
 
-<title>Curry Cart</title>
+<title>Kyrrah's Curry Cart</title>
 </head>
 
 <body>
