@@ -79,6 +79,18 @@ foreach($myCurries as $Curry){
                         </div>      
                     </div>
     ';
+    
+                        <div class="container">
+                        <h2 class="red-text">Sides</h2>
+                        <label for="sides" class="italicize"><?php //echo $Description?><span class="font-change oswald">Don't forget rice!</span></label>
+                        <ul>
+                            <li><input name="white" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$999.00</span></li>
+                            <li><input name="brown" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$999.00</span></li>
+                            <li><input name="sticky" id="sides" type="checkbox" value="sticky">Sticky Rice ~ <span class="price italicize">$999.00</span></li> 
+                            <li><input name="basmati" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$999.00</span></li>
+                            <li><input name="cauliflower" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$999.00</span></li>
+                        </ul> 
+                    </div><!--end sides-->
 
 }
 
@@ -110,16 +122,6 @@ foreach($myCurries as $Curry){
                             <input id="submit" type="submit" value="Complete Order">
                     </div><!--end customer info-->
  
-                    <div class="container">
-                        <h2 class="red-text">Sides</h2>
-                        <label for="sides" class="italicize"><?php //echo $Description?><span class="font-change oswald">Don't forget rice!</span></label>
-                        <ul>
-                            <li><input name="white" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$999.00</span></li>
-                            <li><input name="brown" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$999.00</span></li>
-                            <li><input name="sticky" id="sides" type="checkbox" value="sticky">Sticky Rice ~ <span class="price italicize">$999.00</span></li> 
-                            <li><input name="basmati" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$999.00</span></li>
-                            <li><input name="cauliflower" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$999.00</span></li>
-                        </ul> 
-                    </div><!--end sides-->
+
                     
  <!--FORM END--> </form>
