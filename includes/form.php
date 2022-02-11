@@ -79,7 +79,9 @@ foreach($myCurries as $Curry){
                         </div>      
                     </div>
     ';
-    
+    }
+?>
+
                         <div class="container">
                         <h2 class="red-text">Sides</h2>
                         <label for="sides" class="italicize"><?php //echo $Description?><span class="font-change oswald">Don't forget rice!</span></label>
@@ -91,13 +93,6 @@ foreach($myCurries as $Curry){
                             <li><input name="cauliflower" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$999.00</span></li>
                         </ul> 
                     </div><!--end sides-->
-
-}
-
-
-
-
-?>
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
                     <div class="container info">
