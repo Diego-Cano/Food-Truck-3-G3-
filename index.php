@@ -27,33 +27,44 @@ include('includes/total.php');
     </div>   
 </div><!--HERO-->
 
-<div class="flex-wrap">
-                <div class="flex-container left">
-            
-            <?php include('includes/form.php'); ?>
-
-                </div><!--end flex-container left-->
-      
-      <div class="flex-container right">
-      <div class="container about">
+<div class="content-wrap">
+<div class="container about">
       <h2 class="red-text center">About Us<h2>
           <p class="italicize">Kyrrah's Curry Cart is Seattle's oldest, continuously operated food truck! Serving up spice n' sass&trade; since 1993,
               we've continued to be your neighborhood go-to for all things curry. 
           </p>
-              </div><!--end about-->
+</div><!--end about-->
 
-              <!-- this div will only display when all required form fields
-              are filled out and order is complete-->
-<div class="center"> 
-       <?php echo 'Total is: '.$total->getSubtotal($myCurries);?>
-</div>     
+            <?php include('includes/form.php'); ?>
 
+              <!-- this div will only display when all required form fields are filled out and order is complete-->
 
-                </div><!--end flex-container right-->
-</div><!--flex-wrap-->
+            <?php //echo '<div class="center total"> Total is: '.$total->getSubtotal($myCurries).'</div>';?>
 
-           
+</div><!--end content wrap-->
+
+<footer>
+
+    <ul class="bottom-links">
+        <li>Copyright &copy; 1993-2022</li>
+        <li>Diego</li>
+        <li>Ellen</li>
+        <li>Brink</li>
+        <li>KC</li>
+        <li><small><a id="html-checker" href="#">HTML&nbsp;Validation</a>&nbsp;~&nbsp;<a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS&nbsp;Validation</a></small></li>
+    </ul>
+
+    <hr>
+    
+    <ul class="social">
+        <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fas fa-envelope-square"></i></li>
+        <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-instagram-square"></i></a></li>
+        <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-facebook-square"></i></li>
+    </ul>
+
+</footer>
 
 </div> <!--WRAPPER-->
+<script>document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href); </script>
 </body>
 </html>
