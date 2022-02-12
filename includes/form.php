@@ -63,7 +63,7 @@ $myCurry[]= new Curry(3, 'Japanese Curry', 'A milder option, our Japanese-style 
 
 foreach($myCurries as $Curry){
     echo '
-    <div class="container">
+    <div class="container food-object">
                         <h2 class="red-text">'.$Curry->Name.'</h2>
                         <p class="description italicize">'.$Curry->Description.'<p>
                         <p class="description italicize">'.$Curry->Price.'<p>
@@ -86,7 +86,7 @@ foreach($myCurries as $Curry){
                         </ul>
                         </div><!--end protein-->
 
-                        <div class="container">
+                        <div class="input">
                         <h2 class="red-text">Sides</h2>
                         <label for="sides" class="italicize font-change oswald">Don\'t forget rice!</label>
                         <ul>
