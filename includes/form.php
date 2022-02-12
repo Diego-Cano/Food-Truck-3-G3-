@@ -23,11 +23,12 @@ class Curry{ // initialize Curry class variables
         $this->Extras[] = $Extra;
     }//end of addExtra()
 
+
 }//end of Curry class
 
 
 
-$myCurries[] = new Curry(1, 'Thai Curry', 'Made with coconut milk and our signature curry paste, this traditional Thai curry combines herbs, spices, and aromatic leaves for a tantalizing experience you won\'t soon forget!', 12.95);
+$myCurry[] = new Curry(1, 'Thai Curry', 'Made with coconut milk and our signature curry paste, this traditional Thai curry combines herbs, spices, and aromatic leaves for a tantalizing experience you won\'t soon forget!', 12.95);
 // $myCurries->addExtra("white");
 // $myCurries->addExtra("brown");
 // $myCurries->addExtra("sticky");
@@ -35,7 +36,7 @@ $myCurries[] = new Curry(1, 'Thai Curry', 'Made with coconut milk and our signat
 // $myCurries->addExtra("cauliflower");
 // $myCurries[] = $myCurry;
 
-$myCurries[] = new Curry(2, 'Indian Curry', 'Our savory base of ginger, garlic, and turmeric combine with delicate spices to deliver a truly unforgettable meal!', 13.95);
+$myCurry[] = new Curry(2, 'Indian Curry', 'Our savory base of ginger, garlic, and turmeric combine with delicate spices to deliver a truly unforgettable meal!', 13.95);
 // $myCurries->addExtra("white");
 // $myCurries->addExtra("brown");
 // $myCurries->addExtra("sticky");
@@ -44,7 +45,7 @@ $myCurries[] = new Curry(2, 'Indian Curry', 'Our savory base of ginger, garlic, 
 // $myCurries[] = $myCurry;
 
 
-$myCurries[]= new Curry(3, 'Japanese Curry', 'A milder option, our Japanese-style curry is packed full of hearty vegetables and thickend by a home-made roux', 10.95);
+$myCurry[]= new Curry(3, 'Japanese Curry', 'A milder option, our Japanese-style curry is packed full of hearty vegetables and thickend by a home-made roux', 10.95);
 // $myCurries->addExtra("white");
 // $myCurries->addExtra("brown");
 // $myCurries->addExtra("sticky");
@@ -52,6 +53,13 @@ $myCurries[]= new Curry(3, 'Japanese Curry', 'A milder option, our Japanese-styl
 // $myCurries->addExtra("cauliflower");
 // $myCurries[] = $myCurry;
 
+?>
+
+<form action ="
+<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ;?>
+" method="post">
+
+<?php
 
 foreach($myCurries as $Curry){
     echo '
@@ -59,16 +67,7 @@ foreach($myCurries as $Curry){
                         <h2 class="red-text">'.$Curry->Name.'</h2>
                         <p class="description italicize">'.$Curry->Description.'<p>
                         <p class="description italicize">'.$Curry->Price.'<p>
-
-                        <div class="input">
-                        <label for="protein" class="italicize font-change oswald">Choose Your Protein(s)</label>
-                        <ul>
-                            <li><input name="chicken" id="protein" type="checkbox" value="chicken">Chicken</li>
-                            <li><input name="tofu" id="protein" type="checkbox" value="tofu">Tofu</li>
-                            <li><input name="beef" id="protein" type="checkbox" value="beef">Beef</li>
-                        </ul>
-                        </div>
-
+                        
                         <div class="input">
                         <label for="spice" class="italicize font-change oswald">Select Your Spice Level</label>
                         <ul>
@@ -76,25 +75,38 @@ foreach($myCurries as $Curry){
                             <li><input name="spice" id="spice" type="radio" value="medium">Medium<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
                             <li><input name="spice" id="spice" type="radio" value="spicy">Spicy<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
                         </ul>
-                        </div>      
-                    </div>
+                        </div><!--end spice-->
+
+                        <div class="input">
+                        <label for="protein" class="italicize font-change oswald">Choose Your Protein(s)</label>
+                        <ul>
+                            <li><input name="protein" id="protein" type="checkbox" value="chicken">Chicken</li>
+                            <li><input name="protein" id="protein" type="checkbox" value="tofu">Tofu</li>
+                            <li><input name="protein" id="protein" type="checkbox" value="beef">Beef</li>
+                        </ul>
+                        </div><!--end protein-->
+
+                        <div class="container">
+                        <h2 class="red-text">Sides</h2>
+                        <label for="sides" class="italicize font-change oswald">Don\'t forget rice!</label>
+                        <ul>
+                            <li><input name="sides" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$999.00</span></li>
+                            <li><input name="sides" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$999.00</span></li>
+                            <li><input name="sides" id="sides" type="checkbox" value="pineapple">Pineapple Rice ~ <span class="price italicize">$999.00</span></li> 
+                            <li><input name="sides" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$999.00</span></li>
+                            <li><input name="sides" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$999.00</span></li>
+                        </ul> 
+                    </div><!--end sides-->
+
+    
+                        <div class="input">
+                        <label for="qty" class="italicize font-change oswald">Quantity:</label>
+                            <input name="qty" id="qty" type="number">
+                        </div>
     ';
     }
 ?>
 
-                        <div class="container">
-                        <h2 class="red-text">Sides</h2>
-                        <label for="sides" class="italicize"><?php //echo $Description?><span class="font-change oswald">Don't forget rice!</span></label>
-                        <ul>
-                            <li><input name="white" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$999.00</span></li>
-                            <li><input name="brown" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$999.00</span></li>
-                            <li><input name="sticky" id="sides" type="checkbox" value="sticky">Sticky Rice ~ <span class="price italicize">$999.00</span></li> 
-                            <li><input name="basmati" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$999.00</span></li>
-                            <li><input name="cauliflower" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$999.00</span></li>
-                        </ul> 
-                    </div><!--end sides-->
-
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
                     <div class="container info">
                         <h2 class="red-text">Order Info</h2>
                             <label for="customer_name">Your Name &#x2a;</label>
