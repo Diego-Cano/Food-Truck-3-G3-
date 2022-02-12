@@ -1,5 +1,5 @@
 /*UNIVERSIAL STYLES*/
-   * {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,12 +10,13 @@ html {
     line-height: 1.5;
 }
 
-.wrapper {
+.wrapper { /*wrapper for entire page*/
     width: 100%;
     min-width: 360px;
-    max-width: 1350px;
-    margin-bottom: 15%;
-    
+}
+
+.content-wrap { /*wrapper for page content MINUS hero image*/
+    margin: 1em 1em 0 1em; 
 }
 
 li {
@@ -32,10 +33,15 @@ img {
     display: block;
 }
 
+.mobile { /*hides elements on larger viewports*/
+    display: none;
+}
+
 /*resuable classes used universally*/
 .error {
     color:red;
     font-weight: bold;
+    margin-left: 2%;
 }
 
 .italicize, dd {
@@ -58,6 +64,25 @@ img {
     font-size: 1.23rem;
     font-weight: 800;
 }
+
+@media (max-width: 647px) {
+
+    .red-text {
+        text-align: center;
+    }
+    
+    .error {
+        font-size: .8em;
+    }
+    
+    } /*end media query*/
+    
+    @media (max-width: 460px) {
+        .error {
+            font-size: .5em;
+        }
+        
+    } /*end media query for smaller viewport*/
 
 
 /*hero image*/
@@ -83,32 +108,23 @@ img {
     padding: 1em;
   }
 
+@media (min-width: 680px) { /* flex box for layout on larger viewports*/
+    .flex-container.column {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 48%;
+        float: left;
+    }
 
+    .about {
+        float: right;
+        width: 50%;
+    
+    }
 
-/* flex box for layout */
-.flex-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-.flex-container.left {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 50%;
-    padding: 2em 1em 2em 2em;
-}
-.flex-container.right {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 50%;
-    padding: 2em 2em 2em 1em;
-}/*end flexbox*/
-
+}/*end media queries*/
 
 
 .container, .total { /* gives border, padding, margin to selected divs (divs for food categories/order total/about) */
@@ -116,6 +132,7 @@ img {
     margin-bottom: 1em;
     padding: 1em;
 }
+
 
 /* Customer name, email, phone form */
 .info label, .required {
@@ -162,11 +179,6 @@ input[type="radio"], input[type="checkbox"] {
 .total {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), /*url('http://www.knielsen.design/it262/p3/images/food_truck_lady.jpeg')*/;
-    background-size: 100% 100%;
-    /* background-color: #FA6B2D;
-    color: white; */
   }
 
 
@@ -186,3 +198,42 @@ input[type=submit] {
 input[type=submit]:hover {
     opacity: 0.4;
 }
+
+
+/* FOOTER STYLES  */
+    /*GRID FOR TOP OF FOOTER*/
+    footer {
+        height: auto;
+        background: #1c1a14;
+        padding: 3%;
+        clear: both;
+
+    }
+
+    footer a, footer {
+        color: #f8f6f9;
+    }
+
+    /*BOTTOM FOOTER STYLES*/
+    .bottom-links {
+        grid-column: 1 / span 7;
+        grid-row: 2;
+        margin: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .bottom-links li, .social li {
+        display: inline-block;
+    }
+   
+    .social { /*SOCIAL MEDIA ICONS*/
+        grid-column: 3 / span 2;
+        display: flex;
+        justify-content: center;
+    }
+    .social i {
+        font-size: 36px;
+        margin: 0.4em;
+    }
+     /* END FOOTER STYLES  */    /* END FOOTER STYLES  */
