@@ -1,5 +1,6 @@
 <?php
 //customer.php 
+//include('includes/total.php');
 
 // initialize variables
 $customerName = '';
@@ -7,12 +8,9 @@ $email = '';
 $phone = '';
 $total = '';
 
-
 $nameError = '';
 $emailError = '';
 $phoneError = '';
-
-
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -39,7 +37,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         }
 
-
 if(!empty($_POST['customer_name']) && 
 !empty($_POST['email']) && 
 !empty($_POST['phone'])) {
@@ -55,9 +52,9 @@ if(!empty($_POST['customer_name']) &&
              <dt></dt>
                 <dd></dd>
         </dl>
-    <p class="italicize">tax</p>
-    <p class="italicize">subtotal</p>
-    <h2>ORDER TOTAL:<span class="price italicize"> $price will go here</span></h2>
+    <p class="italicize">tax: $'.$tax.'</p>
+    <p class="italicize">subtotal: $'.$subtotal.'</p>
+    <h2>ORDER TOTAL:<span class="price italicize"> $'.$total.'</h2>
     </div>';
 
 } // END IF(!EMPTY())

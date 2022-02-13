@@ -2,27 +2,19 @@
 // total.php
 // functions for totals will go here
 
-class Total{
-
-    public $Tax = 0.1025;
-    
-
-    public function getSubtotal($myCurries) {
-        $Subtotal = 0.0;
-        foreach($Curries as $Curry){
-            $Subtotal += ($Curry->Price * $Curry->Quantity);
-        }
-        return $Subtotal;
+class TotalOrder{
+    public function subtotal($myCurries) {
+    $subtotal = 0.0;
+    foreach($myCurries as $Curry){
+        $subtotal += ($Curry->Price * $Curry->Quantity);
+    }
+    return $subtotal;
     }
 
-    // public function getSubtotal($Quantity, $Price) {
-    //     $Subtotal = $Quantity * $Price;
-    //     return $Subtotal;
-    // }
-
-    public function totalWithTax($Subtotal) {
-     $Total = $Subtotal * $Tax; //or whatever the right # is for tax?
-     return $Total;
+    public function totalWithTax($subtotal) {
+     $tax = 0.1025;
+     $total = $subtotal * $tax;
+     return $total;
     }
 
 }
