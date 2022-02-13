@@ -2,6 +2,7 @@
 include('includes/customer.php');
 include('includes/total.php');
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,35 +34,34 @@ include('includes/total.php');
           <p class="italicize">Kyrrah's Curry Cart is Seattle's oldest, continuously operated food truck! Serving up spice n' sass&trade; since 1993,
               we've continued to be your neighborhood go-to for all things curry. 
           </p>
-</div><!--end about-->
+</div><!--end container about-->
 
-            <?php include('includes/form.php'); ?>
+<?php include('includes/form.php'); ?>
 
-              <!-- this div will only display when all required form fields are filled out and order is complete-->
+<!-- this div will only display when all required form fields are filled out and order is complete-->
 
-            <?php //echo '<div class="center total"> Total is: '.$total->getSubtotal($myCurries).'</div>';?>
+<?php //echo '<div class="center total"> Your total is: '.$total//->subtotal($myCurries).'</div>';?> <!--REPEATS ORDER TOTAL?-->
+
 
 </div><!--end content wrap-->
 
 <footer>
+<ul class="bottom-links">
+    <li>Copyright &copy; 1993-2022</li>
+    <li>Diego</li>
+    <li>Ellen</li>
+    <li>Brink</li>
+    <li>KC</li>
+    <li><small><a id="html-checker" href="#">HTML&nbsp;Validation</a>&nbsp;~&nbsp;<a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS&nbsp;Validation</a></small></li>
+</ul>
 
-    <ul class="bottom-links">
-        <li>Copyright &copy; 1993-2022</li>
-        <li>Diego</li>
-        <li>Ellen</li>
-        <li>Brink</li>
-        <li>KC</li>
-        <li><small><a id="html-checker" href="#">HTML&nbsp;Validation</a>&nbsp;~&nbsp;<a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS&nbsp;Validation</a></small></li>
-    </ul>
-
-    <hr>
+<hr>
     
-    <ul class="social">
-        <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fas fa-envelope-square"></i></li>
-        <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-instagram-square"></i></a></li>
-        <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-facebook-square"></i></li>
-    </ul>
-
+<ul class="social">
+    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fas fa-envelope-square"></i></li>
+    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-instagram-square"></i></a></li>
+    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-facebook-square"></i></li>
+</ul>
 </footer>
 
 </div> <!--WRAPPER-->
