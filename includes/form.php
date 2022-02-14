@@ -1,5 +1,5 @@
-<?php include "includes/curry.php"?>// form.php
-// for our item constuctor and order form
+<?php include "includes/curry.php"?>
+
 
 <form action="summary.php" method="post">
 
