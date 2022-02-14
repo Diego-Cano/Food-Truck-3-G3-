@@ -2,7 +2,7 @@
 // form.php
 // for our item constuctor and order form
 
-class Curry{ // initialize Curry class variables
+class Curry{ // initialize Curry class properties
     public $ID = 0;
     public $Name = '';
     public $Description = '';
@@ -64,35 +64,35 @@ foreach($myCurry as $Curry){
         <div class="input">
         <label for="spice" class="italicize font-change oswald">Select Your Spice Level</label>
         <ul>
-            <li><input name="spice" id="spice" type="radio" value="mild">Mild<i class="fas fa-pepper-hot"></i></li>
-            <li><input name="spice" id="spice" type="radio" value="medium">Medium<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
-            <li><input name="spice" id="spice" type="radio" value="spicy">Spicy<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
+            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="mild">Mild<i class="fas fa-pepper-hot"></i></li>
+            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="medium">Medium<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
+            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="spicy">Spicy<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
         </ul>
         </div><!--end spice-->
 
         <div class="input">
         <label for="protein" class="italicize font-change oswald">Choose Your Protein(s)</label>
         <ul>
-            <li><input name="protein" id="protein" type="checkbox" value="chicken">Chicken</li>
-            <li><input name="protein" id="protein" type="checkbox" value="tofu">Tofu</li>
-            <li><input name="protein" id="protein" type="checkbox" value="beef">Beef</li>
+            <li><input name="'.$Curry->Name.'_protein" id="protein" type="checkbox" value="chicken">Chicken</li>
+            <li><input name="'.$Curry->Name.'_protein" id="protein" type="checkbox" value="tofu">Tofu</li>
+            <li><input name="'.$Curry->Name.'_protein" id="protein" type="checkbox" value="beef">Beef</li>
         </ul>
         </div><!--end protein-->
 
         <div class="input">
         <label for="sides" class="italicize font-change oswald">Don\'t forget rice!</label>
         <ul>
-            <li><input name="sides" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="sides" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="sides" id="sides" type="checkbox" value="pineapple">Pineapple Rice ~ <span class="price italicize">$4</span></li> 
-            <li><input name="sides" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="sides" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="pineapple">Pineapple Rice ~ <span class="price italicize">$4</span></li> 
+            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$3</span></li>
         </ul> 
         </div><!--end sides-->
 
         <div class="input">
-        <label for="qty" class="italicize font-change oswald">Please enter a quantity:</label>
-            <input for "qty" name="qty" id="qty" type="number" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
+        <label for="'.$Curry->Name.'_qty" class="italicize font-change oswald">Please enter a quantity:</label>
+            <input name="qty" type="number" size=3>
         </div>
 
     </div> <!--end container food-object-->
