@@ -92,7 +92,7 @@ foreach($myCurry as $Curry){
 
         <div class="input">
         <label for="'.$Curry->Name.'_qty" class="italicize font-change oswald">Please enter a quantity:</label>
-            <input name="qty" type="number" size=3>
+            <input name="qty" type="number" min="0" max="15" size=3>
         </div>
 
     </div> <!--end container food-object-->
