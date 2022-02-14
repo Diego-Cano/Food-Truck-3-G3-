@@ -40,17 +40,39 @@ include('includes/total.php');
 
 <!-- this div will only display when all required form fields are filled out and order is complete-->
 
-<?php //echo '<div class="center total"> Your total is: '.$total//->subtotal($myCurries).'</div>';?> <!--REPEATS ORDER TOTAL?-->
+<?php //echo '<div class="center total"> Your total is: '.$total//->subtotal($myCurries).'</div>'; <!--REPEATS ORDER TOTAL?-->
 
+
+
+// $subtotal = $myCurry[3];
+// $tax = $subtotal * .1025;            <---- ECHOING CONTENTS OF SUMMARY.PHP ---->
+// $total = $subtotal + ($tax);
+
+if (
+    !empty($_POST['customer_name']) &&
+    !empty($_POST['email']) &&
+    !empty($_POST['phone'])) {
+
+    echo '<div class="container food-object">
+    <h2>Thank you, ' . $customerName . '!</h2>
+    <p class="italicize">Contact Info: ' . $email . '<br>' . $phone . '</p>
+    <p class="italicize">tax: $' . $tax . '</p>
+    <p class="italicize">subtotal: $' . $subtotal . '</p>
+    <h2>ORDER TOTAL:<span class="price italicize"> $' . $total . '</h2>
+</div>';
+
+} // END IF(!EMPTY())
+?>
 
 </div><!--end content wrap-->
-
+</div> <!--WRAPPER-->
 <footer>
 <ul class="bottom-links">
-    <li>Copyright &copy; 1993-2022</li>
+    <li>Copyright &copy; 1993-<?php echo date("Y");?></li>
     <li>Diego</li>
     <li>Ellen</li>
     <li>Brink</li>
+    <li>Darrian</li>
     <li>KC</li>
     <li><small><a id="html-checker" href="#">HTML&nbsp;Validation</a>&nbsp;~&nbsp;<a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS&nbsp;Validation</a></small></li>
 </ul>
@@ -64,7 +86,7 @@ include('includes/total.php');
 </ul>
 </footer>
 
-</div> <!--WRAPPER-->
+
 <script>document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href); </script>
 </body>
 </html>

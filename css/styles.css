@@ -176,6 +176,13 @@ input[type="radio"], input[type="checkbox"] {
     font-size: .7em;
     text-indent: 2em;
 }
+
+@media (min-width: 680px) {
+.about p {
+    line-height: 2.5;
+}
+}
+
 .total {
     width: 100%;
     height: auto;
@@ -193,6 +200,7 @@ input[type=submit] {
     color: #f8f6f9;
     background-color: #272727;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 1em;
 }
 
 input[type=submit]:hover {
