@@ -111,7 +111,7 @@ foreach($myCurry as $Curry){
 
         <div class="input">
         <label for="qty" class="italicize font-change oswald">Please enter a quantity:</label>
-            <input for "qty" name="qty" id="qty" type="number" min="1" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
+            <input for "qty" name="'.$Curry->Quantity.'" id="qty" type="number" min="0" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
             <span class="error">'.$qtyError.'</span>
         </div>
 
@@ -119,13 +119,7 @@ foreach($myCurry as $Curry){
     ' // end echo;
     ;} // end foreach
 
- 
 ?>
-
-
         <input id="submit" type="submit" value="Complete Order">
-
-
-
      
  <!--FORM END--> </form>
