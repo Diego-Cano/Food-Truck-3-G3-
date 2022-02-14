@@ -53,6 +53,10 @@ if (
     !empty($_POST['email']) &&
     !empty($_POST['phone'])) {
 
+    $tax = 0.1025;
+    $subtotal = ($Curry->Quantity * $Curry->Price);
+    $total = $subtotal * $tax;
+
     echo '<div class="container food-object">
     <h2>Thank you, ' . $customerName . '!</h2>
     <p class="italicize">Contact Info: ' . $email . '<br>' . $phone . '</p>
