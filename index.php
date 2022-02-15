@@ -51,7 +51,8 @@ include('includes/total.php');
 
 //variables for output
 //echo statements may be used or deleted or commented out later...helpful for testing
-$thaiQty = $_POST['Thai_Curry_qty'];
+
+$thaiQty = $_POST['1'];
 $thaiExtras = count($_POST['Thai_Curry_sides']);
 $thaiPrice = 12.95;
 $thaiSpice = $_POST['Thai_Curry_spice'];
@@ -62,7 +63,7 @@ echo  '<br>';
 echo $thaiSpice .' spice with '. $thaiProtein;
 echo  '<br>';
 
-$indiaQty = $_POST['Indian_Curry_qty'];
+$indiaQty = $_POST['2'];
 $indiaExtras = count($_POST['Indian_Curry_sides']);
 $indiaPrice = 13.95;
 $indiaSub = ($indiaPrice * $indiaQty);
@@ -70,7 +71,7 @@ $indiaSub = ($indiaPrice * $indiaQty);
 echo $indiaQty.' Indian curries @ $'. $indiaPrice;
 echo  '<br>';
 
-$japanQty = $_POST['Japanese_Curry_qty'];
+$japanQty = $_POST['3'];
 $japanExtras = count($_POST['Japanese_Curry_sides']);
 $japanPrice = 10.95;
 $japanSub = ($japanPrice * $japanQty);
@@ -92,16 +93,24 @@ echo 'Seattle Tax: $'.$taxTotal;
 echo  '<br>';
 echo 'Total: $'.$total;
 
+
 if (
     !empty($_POST['customer_name']) &&
     !empty($_POST['email']) &&
     !empty($_POST['phone'])) {
-
     echo '<div class="container food-object">
     <h2>Thank you, ' . $customerName . '!</h2>
     <p class="italicize">Contact Info: ' . $email . '<br>' . $phone . '</p>
-    <p class="italicize">tax: $' . $taxTotal . '</p>
-    <p class="italicize">subTotal: $' . $subTotal . '</p>
+    <p class="italicize">Your order:';
+    foreach($myCurry as $Curry){
+            if($Curry->Quantity > 0){
+                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ '.$Curry->Price.' </p>';
+            }
+        echo $summary;
+        }
+    echo ' 
+    <p class="italicize">Subtotal: $' . $subTotal . '</p>
+    <p class="italicize">Seattle Tax: $' . $taxTotal . '</p>
     <h2>ORDER TOTAL:<span class="price italicize"> $' . $total . '</h2>
 </div>'
 
