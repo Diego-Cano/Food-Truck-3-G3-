@@ -2,52 +2,7 @@
 // form.php
 // for our item constuctor and order form
 
-class Curry{ // initialize Curry class variables
-    public $ID = 0;
-    public $Name = '';
-    public $Description = '';
-    public $Price = 0;
-    public $Quantity= 0;
-    public $Extras = array();
-
-    public function __construct($ID, $Name, $Description, $Price){ // constructing curry items
-        $this->ID = $ID;
-        $this->Name = $Name;
-        $this->Description = $Description;
-        $this->Price = $Price;
-    }// end of Curry constructor
-
-    public function addExtra($Extra){
-        $this->Extras[] = $Extra;
-    }//end of addExtra()
-
-}//end of Curry class
-
-
-$myCurry[] = new Curry(1, 'Thai Curry', 'Made with coconut milk and our signature curry paste, this traditional Thai curry combines herbs, spices, and aromatic leaves for a tantalizing experience you won\'t soon forget!', 12.95);
-// $myCurries->addExtra("white");
-// $myCurries->addExtra("brown");
-// $myCurries->addExtra("sticky");
-// $myCurries->addExtra("basmati");
-// $myCurries->addExtra("cauliflower");
-// $myCurries[] = $myCurry;
-
-$myCurry[] = new Curry(2, 'Indian Curry', 'Our savory base of ginger, garlic, and turmeric combine with delicate spices to deliver a truly unforgettable meal!', 13.95);
-// $myCurries->addExtra("white");
-// $myCurries->addExtra("brown");
-// $myCurries->addExtra("sticky");
-// $myCurries->addExtra("basmati");
-// $myCurries->addExtra("cauliflower");
-// $myCurries[] = $myCurry;
-
-
-$myCurry[]= new Curry(3, 'Japanese Curry', 'A milder option, our Japanese-style curry is packed full of hearty vegetables and thickend by a home-made roux', 10.95);
-// $myCurries->addExtra("white");
-// $myCurries->addExtra("brown");
-// $myCurries->addExtra("sticky");
-// $myCurries->addExtra("basmati");
-// $myCurries->addExtra("cauliflower");
-// $myCurries[] = $myCurry;
+ include('includes/curry.php');
 ?>
 
 <form action ="
@@ -112,13 +67,16 @@ foreach($myCurry as $Curry){
 
         <div class="input">
         <label for="qty" class="italicize font-change oswald">Please enter a quantity:</label>
-            <input for "qty" name="'.$Curry->Name.'_qty" id="qty" type="number" min="0" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
+            <input for "qty" name="'.$Curry->ID.'" id="qty" type="number" min="0" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
             <span class="error">'.$qtyError.'</span>
         </div>
 
     </div> <!--end container food-object-->
-    ' // end echo;
-    ;} // end foreach
+    '; // end echo;
+    if((isset($_POST[$Curry->ID])) && $_POST[$Curry->ID]){
+        $Curry->Quantity = $_POST[$Curry->ID];
+    } // end if isset
+    } // end foreach
 
 ?>
         <input id="submit" type="submit" value="Complete Order">
