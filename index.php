@@ -52,7 +52,15 @@ include('includes/total.php');
 //variables for output
 //echo statements may be used or deleted or commented out later...helpful for testing
 
-$orderSub = number_format((($_POST['1'] * 12.95) + ($_POST['2'] *  13.95) + ($_POST['3'] * 10.95)),2);
+
+$orderSub = 0;
+foreach($myCurry as $Curry){
+
+    if($Curry->Quantity > 0){
+    $orderSub += $Curry->Quantity * $Curry->Price;
+}
+}
+$subTotal = number_format(($orderSub),2);
 $SEA_TAX = .1025;
 $taxTotal = number_format(($SEA_TAX * $orderSub),2);
 $total = number_format(($orderSub + $taxTotal),2);
@@ -68,12 +76,12 @@ if (
     <p class="italicize">Your order:';
     foreach($myCurry as $Curry){
             if($Curry->Quantity > 0){
-                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.' </p>';
+                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.'  '.$Curry->Extras.'</p>';
             }
         echo $summary;
         } //end summary
     echo ' 
-    <p class="italicize">Subtotal: $' . $orderSub . '</p>
+    <p class="italicize">Subtotal: $' . $subTotal . '</p>
     <p class="italicize">Seattle Tax: $' . $taxTotal . '</p>
     <h2>ORDER TOTAL:<span class="price italicize"> $' . $total . '</h2>
 </div>'
@@ -91,7 +99,7 @@ if (
     <li>Diego</li>
     <li>Ellen</li>
     <li>Brink</li>
-    <li>Darrian</li>
+    <li>Devvy</li>
     <li>KC</li>
     <li><small><a id="html-checker" href="#">HTML&nbsp;Validation</a>&nbsp;~&nbsp;<a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS&nbsp;Validation</a></small></li>
 </ul>
