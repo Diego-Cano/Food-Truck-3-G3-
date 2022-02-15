@@ -68,7 +68,7 @@ if (
     <p class="italicize">Your order:';
     foreach($myCurry as $Curry){
             if($Curry->Quantity > 0){
-                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ '.$Curry->Price.' '.$Curry->Extras.' </p>';
+                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.' '.$Curry->Extras.' </p>';
             }
         echo $summary;
         } //end summary
