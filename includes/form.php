@@ -82,6 +82,7 @@ foreach($myCurry as $Curry){
         <label for="'.$Curry->Name.'_spice" class="italicize font-change oswald">Select Your Spice Level</label>
         <ul>
             <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="mild">Mild<i class="fas fa-pepper-hot"></i></li>
+            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="medium">Medium<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
             <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="spicy">Spicy<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
         </ul>
         <span class="error">'.$spiceError.'</span>
@@ -111,7 +112,7 @@ foreach($myCurry as $Curry){
 
         <div class="input">
         <label for="qty" class="italicize font-change oswald">Please enter a quantity:</label>
-            <input for "qty" name="'.$Curry->Quantity.'" id="qty" type="number" min="0" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
+            <input for "qty" name="'.$Curry->Name.'_qty" id="qty" type="number" min="0" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
             <span class="error">'.$qtyError.'</span>
         </div>
 

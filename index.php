@@ -40,30 +40,72 @@ include('includes/total.php');
 
 <!-- this div will only display when all required form fields are filled out and order is complete-->
 
-<?php //echo '<div class="center total"> Your total is: '.$total//->subtotal($myCurries).'</div>'; <!--REPEATS ORDER TOTAL?-->
+<?php //echo '<div class="center total"> Your total is: '.$total//->subTotal($myCurries).'</div>'; <!--REPEATS ORDER TOTAL?-->
 
 
 
-// $subtotal = $myCurry[3];
-// $tax = $subtotal * .1025;            <---- ECHOING CONTENTS OF SUMMARY.PHP ---->
-// $total = $subtotal + ($tax);
+// $subTotal = $myCurry[3];
+// $tax = $subTotal * .1025;            <---- ECHOING CONTENTS OF SUMMARY.PHP ---->
+// $total = $subTotal + ($tax);
+ 
+
+//variables for output
+//echo statements may be used or deleted or commented out later...helpful for testing
+$thaiQty = $_POST['Thai_Curry_qty'];
+$thaiExtras = count($_POST['Thai_Curry_sides']);
+$thaiPrice = 12.95;
+$thaiSpice = $_POST['Thai_Curry_spice'];
+$thaiProtein = $_POST['Thai_Curry_protein'];
+$thaiSub = ($thaiPrice * $thaiQty);
+echo $thaiQty. ' Thai curries @ $' . $thaiPrice;
+echo  '<br>';
+echo $thaiSpice .' spice with '. $thaiProtein;
+echo  '<br>';
+
+$indiaQty = $_POST['Indian_Curry_qty'];
+$indiaExtras = count($_POST['Indian_Curry_sides']);
+$indiaPrice = 13.95;
+$indiaSub = ($indiaPrice * $indiaQty);
+
+echo $indiaQty.' Indian curries @ $'. $indiaPrice;
+echo  '<br>';
+
+$japanQty = $_POST['Japanese_Curry_qty'];
+$japanExtras = count($_POST['Japanese_Curry_sides']);
+$japanPrice = 10.95;
+$japanSub = ($japanPrice * $japanQty);
+echo $japanQty.' Japanese curries @ $'. $japanPrice;
+echo  '<br>';
+
+$extraPrice = 3.99;
+$totalExtras = $thaiExtras + $indiaExtras + $japanExtras;
+$extraSub = $totalExtras * $extraPrice;
+echo $totalExtras .' sides rice @ $'.$extraPrice;
+echo  '<br>';
+$subTotal = number_format(($thaiSub + $indiaSub + $japanSub + $extraSub),2);
+echo 'subTotal: $'.$subTotal;
+echo  '<br>';
+$SEA_TAX = .1025;
+$taxTotal = number_format(($SEA_TAX * $subTotal),2);
+$total = number_format(($subTotal + $taxTotal),2);
+echo 'Seattle Tax: $'.$taxTotal;
+echo  '<br>';
+echo 'Total: $'.$total;
 
 if (
     !empty($_POST['customer_name']) &&
     !empty($_POST['email']) &&
     !empty($_POST['phone'])) {
 
-    $tax = 0.1025;
-    $subtotal = ($Curry->Quantity * $Curry->Price);
-    $total = $subtotal * $tax;
-
     echo '<div class="container food-object">
     <h2>Thank you, ' . $customerName . '!</h2>
     <p class="italicize">Contact Info: ' . $email . '<br>' . $phone . '</p>
-    <p class="italicize">tax: $' . $tax . '</p>
-    <p class="italicize">subtotal: $' . $subtotal . '</p>
+    <p class="italicize">tax: $' . $taxTotal . '</p>
+    <p class="italicize">subTotal: $' . $subTotal . '</p>
     <h2>ORDER TOTAL:<span class="price italicize"> $' . $total . '</h2>
-</div>';
+</div>'
+
+;
 
 } // END IF(!EMPTY())
 ?>
