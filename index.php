@@ -52,46 +52,10 @@ include('includes/total.php');
 //variables for output
 //echo statements may be used or deleted or commented out later...helpful for testing
 
-$thaiQty = $_POST['1'];
-$thaiExtras = count($_POST['Thai_Curry_sides']);
-$thaiPrice = 12.95;
-$thaiSpice = $_POST['Thai_Curry_spice'];
-$thaiProtein = $_POST['Thai_Curry_protein'];
-$thaiSub = ($thaiPrice * $thaiQty);
-echo $thaiQty. ' Thai curries @ $' . $thaiPrice;
-echo  '<br>';
-echo $thaiSpice .' spice with '. $thaiProtein;
-echo  '<br>';
-
-$indiaQty = $_POST['2'];
-$indiaExtras = count($_POST['Indian_Curry_sides']);
-$indiaPrice = 13.95;
-$indiaSub = ($indiaPrice * $indiaQty);
-
-echo $indiaQty.' Indian curries @ $'. $indiaPrice;
-echo  '<br>';
-
-$japanQty = $_POST['3'];
-$japanExtras = count($_POST['Japanese_Curry_sides']);
-$japanPrice = 10.95;
-$japanSub = ($japanPrice * $japanQty);
-echo $japanQty.' Japanese curries @ $'. $japanPrice;
-echo  '<br>';
-
-$extraPrice = 3.99;
-$totalExtras = $thaiExtras + $indiaExtras + $japanExtras;
-$extraSub = $totalExtras * $extraPrice;
-echo $totalExtras .' sides rice @ $'.$extraPrice;
-echo  '<br>';
-$subTotal = number_format(($thaiSub + $indiaSub + $japanSub + $extraSub),2);
-echo 'subTotal: $'.$subTotal;
-echo  '<br>';
+$orderSub = number_format((($_POST['1'] * 12.95) + ($_POST['2'] *  13.95) + ($_POST['3'] * 10.95)),2);
 $SEA_TAX = .1025;
-$taxTotal = number_format(($SEA_TAX * $subTotal),2);
-$total = number_format(($subTotal + $taxTotal),2);
-echo 'Seattle Tax: $'.$taxTotal;
-echo  '<br>';
-echo 'Total: $'.$total;
+$taxTotal = number_format(($SEA_TAX * $orderSub),2);
+$total = number_format(($orderSub + $taxTotal),2);
 
 
 if (
@@ -104,12 +68,12 @@ if (
     <p class="italicize">Your order:';
     foreach($myCurry as $Curry){
             if($Curry->Quantity > 0){
-                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ '.$Curry->Price.' </p>';
+                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ '.$Curry->Price.' '.$Curry->Extras.' </p>';
             }
         echo $summary;
-        }
+        } //end summary
     echo ' 
-    <p class="italicize">Subtotal: $' . $subTotal . '</p>
+    <p class="italicize">Subtotal: $' . $orderSub . '</p>
     <p class="italicize">Seattle Tax: $' . $taxTotal . '</p>
     <h2>ORDER TOTAL:<span class="price italicize"> $' . $total . '</h2>
 </div>'
