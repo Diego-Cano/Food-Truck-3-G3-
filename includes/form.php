@@ -33,26 +33,6 @@ foreach($myCurry as $Curry){ // creates menu
         <p class="description italicize">'.$Curry->Description.'<p>
         <p class="description italicize">$'.$Curry->Price.'<p>
                         
-        <div class="input">
-        <label for="'.$Curry->Name.'_spice" class="italicize font-change oswald">Select Your Spice Level</label>
-        <ul>
-            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="mild">Mild<i class="fas fa-pepper-hot"></i></li>
-            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="medium">Medium<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
-            <li><input name="'.$Curry->Name.'_spice" id="spice" type="radio" value="spicy">Spicy<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></li>
-        </ul>
-        <span class="error">'.$spiceError.'</span>
-        </div><!--end spice-->
-                
-
-        <div class="input">
-        <label for="'.$Curry->Name.'_protein" class="italicize font-change oswald">Choose Your Protein(s)</label>
-        <ul>
-            <li><input name="'.$Curry->Name.'_protein" id="protein" type="radio" value="chicken">Chicken</li>
-            <li><input name="'.$Curry->Name.'_protein" id="protein" type="radio" value="tofu">Tofu</li>
-            <li><input name="'.$Curry->Name.'_protein" id="protein" type="radio" value="beef">Beef</li>
-        </ul>
-        <span class="error">'.$proteinError.'</span>
-        </div><!--end protein-->
 
         <div class="input">
         <label for="sides" class="italicize font-change oswald">Don\'t forget rice! $3.99 </label>
