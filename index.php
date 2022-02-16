@@ -31,7 +31,7 @@ include('includes/total.php');
 
 <div class="content-wrap">
 <div class="container about">
-      <h2 class="red-text center">About Us<h2>
+      <h2 class="red-text center">About Us</h2>
           <p class="italicize">Kyrrah's Curry Cart is Seattle's oldest, continuously operated food truck! Serving up spice n' sass&trade; since 1993,
               we've continued to be your neighborhood go-to for all things curry. 
           </p>
@@ -74,8 +74,8 @@ $indiaExtras = count($_POST['2_sides']);
 $japanExtras = count($_POST['3_sides']);
 // echo $japanExtras;
 // echo '<br>';
-
-$totalExtras = $thaiExtras + $indiaExtras + $japanExtras;
+$jamaicanExtras = count($_POST['4_sides']);
+$totalExtras = $thaiExtras + $indiaExtras + $japanExtras + $jamaicanExtras;
 // echo 'extras'.$totalExtras;
 // echo '<br>';
 $priceExtras = $totalExtras * 3.99;

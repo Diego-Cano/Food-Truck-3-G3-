@@ -26,7 +26,7 @@
         </div><!--end customer info-->
 
 <?php
-foreach($myCurry as $Curry){ // creates menu
+foreach($myCurry as $Curry){ // creates menu and sets quantity property in curry object
     echo '
     <div class="container food-object">
         <h2 class="red-text">'.$Curry->Name.'</h2>
@@ -53,8 +53,8 @@ foreach($myCurry as $Curry){ // creates menu
 
     </div> <!--end container food-object-->
     '; // end echo;
-    if((isset($_POST[$Curry->ID])) && $_POST[$Curry->ID]){
-        $Curry->Quantity = $_POST[$Curry->ID];
+    if((isset($_POST[$Curry->ID])) && $_POST[$Curry->ID]){ // if quantity is set
+        $Curry->Quantity = $_POST[$Curry->ID]; // change the curry object's quantity property to the input from the form
     } // end if isset
     } // end foreach
 
