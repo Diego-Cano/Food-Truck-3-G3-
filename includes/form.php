@@ -35,7 +35,7 @@ foreach($myCurry as $Curry){ // creates menu and sets quantity property in curry
                         
 
         <div class="input">
-        <label for="sides" class="italicize font-change oswald">Don\'t forget rice! $3.99 </label>
+        <label for="sides" class="italicize font-change oswald">Don\'t forget extra rice!  </label>
         <ul>
             <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="white">White Rice</li>
             <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="brown">Brown Rice</li>
@@ -46,7 +46,7 @@ foreach($myCurry as $Curry){ // creates menu and sets quantity property in curry
         </div><!--end sides-->
 
         <div class="input">
-        <label for="qty" class="italicize font-change oswald">Please enter a quantity:</label>
+        <label for="qty" class="italicize font-change oswald">'.$Curry->Name.' Quantity: </label>
             <input for "qty" name="'.$Curry->ID.'" id="qty" type="number" min="0" max="15" value="<?php if(isset($_POST[','])) echo htmlspecialchars($_POST[',']) ;?">
             <span class="error">'.$qtyError.'</span>
         </div>

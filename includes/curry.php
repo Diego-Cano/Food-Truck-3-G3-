@@ -49,7 +49,7 @@ to deliver a truly unforgettable meal! <i class="fas fa-pepper-hot"></i><i class
 // $myCurries->addExtra("cauliflower");
 // $myCurries[] = $myCurry;
 
-$myCurry[] = new Curry(3, 'Japanese Curry ', 'A milder option, our Japanese-style curry is packed full of hearty
+$myCurry[] = new Curry(3, 'Japanese Curry', 'A milder option, our Japanese-style curry is packed full of hearty
 vegetables and thickend by a home-made roux <i class="fas fa-pepper-hot"></i>', 10.95, 0);
 // $myCurries->addExtra("white");
 // $myCurries->addExtra("brown");

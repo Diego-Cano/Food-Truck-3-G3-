@@ -139,9 +139,9 @@ if (
 <hr>
     
 <ul class="social">
-    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fas fa-envelope-square"></i></li>
+    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fas fa-envelope-square"></i></a></li>
     <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-instagram-square"></i></a></li>
-    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-facebook-square"></i></li>
+    <li><a href ="https://en.wikipedia.org/wiki/Curry"><i class="fab fa-facebook-square"></i></a></li>
 </ul>
 </footer>
 
