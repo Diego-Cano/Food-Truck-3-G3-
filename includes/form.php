@@ -55,13 +55,13 @@ foreach($myCurry as $Curry){ // creates menu
         </div><!--end protein-->
 
         <div class="input">
-        <label for="sides" class="italicize font-change oswald">Don\'t forget rice!</label>
+        <label for="sides" class="italicize font-change oswald">Don\'t forget rice! $3.99 </label>
         <ul>
-            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="pineapple">Pineapple Rice ~ <span class="price italicize">$4</span></li> 
-            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="white">White Rice</li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="brown">Brown Rice</li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="pineapple">Pineapple Rice</li> 
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="basmati">Basmati Rice</li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice</li>
         </ul> 
         </div><!--end sides-->
 

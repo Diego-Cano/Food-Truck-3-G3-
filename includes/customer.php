@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 // Start Object Error Messages
-
+if(isset($_POST['1']) || isset($_POST['2']) || isset($_POST['3'])) {
     if(empty($_POST['spice'])) {
     $spiceError = 'How spicy?';
     } else {
@@ -57,11 +57,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
     $protein = $_POST['protein'];  
     }
-
-    if(empty($_POST['qty'])) {
-        $proteinError = 'How many?';
-        } else {
-        $protein = $_POST['qty'];
 
 } // END IF(!EMPTY())
 

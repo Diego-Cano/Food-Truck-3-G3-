@@ -84,7 +84,6 @@ $priceExtras = $totalExtras * 3.99;
 // iterating through $myCurry array to create subtotals from qty and price properties (this can be a function if anybody has time)
 $orderSub = 0;
 foreach($myCurry as $Curry){
-
     if($Curry->Quantity > 0){
     $orderSub += $Curry->Quantity * $Curry->Price;
 }
@@ -106,10 +105,11 @@ if (
     <p class="italicize">Your order:';
     foreach($myCurry as $Curry){ // begin itemized
             if($Curry->Quantity > 0){
-                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.'</p>';
+                $summary .= '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.'</p>';
             }
-        echo $summary;
-        } //end itemized
+        
+        } 
+        echo $summary;//end itemized
     echo '
     <p class="italicize">'. $totalExtras . ' side(s) rice @ 3.99</p> 
     <p class="italicize">Subtotal: $' . $subTotal . '</p>
