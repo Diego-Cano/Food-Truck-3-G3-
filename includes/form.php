@@ -26,7 +26,7 @@
         </div><!--end customer info-->
 
 <?php
-foreach($myCurry as $Curry){
+foreach($myCurry as $Curry){ // creates menu
     echo '
     <div class="container food-object">
         <h2 class="red-text">'.$Curry->Name.'</h2>
@@ -57,11 +57,11 @@ foreach($myCurry as $Curry){
         <div class="input">
         <label for="sides" class="italicize font-change oswald">Don\'t forget rice!</label>
         <ul>
-            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="pineapple">Pineapple Rice ~ <span class="price italicize">$4</span></li> 
-            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$3</span></li>
-            <li><input name="'.$Curry->Name.'_sides" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="white">White Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="brown">Brown Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="pineapple">Pineapple Rice ~ <span class="price italicize">$4</span></li> 
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="basmati">Basmati Rice ~ <span class="price italicize">$3</span></li>
+            <li><input name="'.$Curry->ID.'_sides[]" id="sides" type="checkbox" value="cauliflower">Cauliflower Rice ~ <span class="price italicize">$3</span></li>
         </ul> 
         </div><!--end sides-->
 

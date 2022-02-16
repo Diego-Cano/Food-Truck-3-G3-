@@ -1,4 +1,5 @@
 <?php
+// index.php
 include('includes/customer.php');
 include('includes/total.php');
 ?>
@@ -40,19 +41,47 @@ include('includes/total.php');
 
 <!-- this div will only display when all required form fields are filled out and order is complete-->
 
-<?php //echo '<div class="center total"> Your total is: '.$total//->subTotal($myCurries).'</div>'; <!--REPEATS ORDER TOTAL?-->
-
-
-
-// $subTotal = $myCurry[3];
-// $tax = $subTotal * .1025;            <---- ECHOING CONTENTS OF SUMMARY.PHP ---->
-// $total = $subTotal + ($tax);
- 
-
+<?php 
 //variables for output
 //echo statements may be used or deleted or commented out later...helpful for testing
 
+// echo is_countable($_POST['1_sides']);
+// echo is_countable($_POST['2_sides']);
+// echo is_countable($_POST['3_sides']);
+// var_dump($_POST['3_sides']);
+// var_dump(is_countable([1, 2, 3])); // bool(true)
+// var_dump(is_countable($_POST['3_sides'])); // bool(true)
+// var_dump(is_countable($_POST['1_sides'])); // bool(true)
+// var_dump(is_countable($_POST['2_sides'])); // bool(true)
+// attempting to make extras a foreach loop:
+// $extras = 0;
+// foreach($myCurry as $Curry){
+//     if($Curry->Quantity > 0){
+//     $extras += count($_POST[$Curry->Name.'_sides']);
+// }
+// }
+// echo 'extras: '.$extras;
+// echo '<br>';
+// echo 'other stuff';
 
+// counting and totaling extras, echo statements for testing
+$thaiExtras = count($_POST['1_sides']);
+// echo $thaiExtras;
+// echo '<br>';
+$indiaExtras = count($_POST['2_sides']);
+// echo $indiaExtras;
+// echo '<br>';
+$japanExtras = count($_POST['3_sides']);
+// echo $japanExtras;
+// echo '<br>';
+
+$totalExtras = $thaiExtras + $indiaExtras + $japanExtras;
+// echo 'extras'.$totalExtras;
+// echo '<br>';
+$priceExtras = $totalExtras * 3.99;
+// echo 'extra price'.$priceExtras;
+// echo '<br>';
+// iterating through $myCurry array to create subtotals from qty and price properties (this can be a function if anybody has time)
 $orderSub = 0;
 foreach($myCurry as $Curry){
 
@@ -60,12 +89,13 @@ foreach($myCurry as $Curry){
     $orderSub += $Curry->Quantity * $Curry->Price;
 }
 }
-$subTotal = number_format(($orderSub),2);
+// total formulas
+$subTotal = number_format(($orderSub + $priceExtras),2);
 $SEA_TAX = .1025;
 $taxTotal = number_format(($SEA_TAX * $orderSub),2);
-$total = number_format(($orderSub + $taxTotal),2);
+$total = number_format(($subTotal + $taxTotal),2);
 
-
+// order summary
 if (
     !empty($_POST['customer_name']) &&
     !empty($_POST['email']) &&
@@ -74,13 +104,14 @@ if (
     <h2>Thank you, ' . $customerName . '!</h2>
     <p class="italicize">Contact Info: ' . $email . '<br>' . $phone . '</p>
     <p class="italicize">Your order:';
-    foreach($myCurry as $Curry){
+    foreach($myCurry as $Curry){ // begin itemized
             if($Curry->Quantity > 0){
-                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.'  '.$Curry->Extras.'</p>';
+                $summary = '<p class="italicize">'.$Curry->Quantity.' '.$Curry->Name.' @ $'.$Curry->Price.'</p>';
             }
         echo $summary;
-        } //end summary
-    echo ' 
+        } //end itemized
+    echo '
+    <p class="italicize">'. $totalExtras . ' side(s) rice @ 3.99</p> 
     <p class="italicize">Subtotal: $' . $subTotal . '</p>
     <p class="italicize">Seattle Tax: $' . $taxTotal . '</p>
     <h2>ORDER TOTAL:<span class="price italicize"> $' . $total . '</h2>
@@ -89,6 +120,7 @@ if (
 ;
 
 } // END IF(!EMPTY())
+// end summary
 ?>
 
 </div><!--end content wrap-->
